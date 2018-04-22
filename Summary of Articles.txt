@@ -1,0 +1,65 @@
+Articles:
+
+1. A Work Stealing Scheduler for Parallel Loops on Shared Cache Multicores
+
+Comments: not suitable for our project. Because the work-stealing algorithm part is based on a 3rd party 
+		  library called KaaPI and this library is written in C. So we do not have time to transfer C to 
+		  Java in a short time. In addition, they run their program for many times in order to find the 
+		  best configuration of the chunk size of the sliding window. 
+
+2. Dynamic Circular Work-Stealing Deque
+
+Comments: Could be one of our candidates. Because the algorithm is not very difficult to understand, and 
+  		  they provide very a clear explanation. Also, they implement the algorithm in an OOP language which
+  		  can help us save time.
+
+3. Hierarchical Work-Stealing
+
+Comments: This article focuses maily on theoretical aspect. Although this is not a suitable one, we can get 
+		  very clear information about background and introduction from this article. Also, you can have a 
+		  look at the algorithms mentioned in this article, but neglect the algorithms using on distributed 
+		  platform(cluster). 
+
+4. Stable Adaptive Work-Stealing for Concurrent Multi-core Runtime Systems
+
+Comments: Their project is intended to address two problems in current development of parallel applications.
+		  One is to improve the scalability of runtime systems when the number of cores is increasing. Another
+		  is to better guide the competitions for processor resources using a feedback approach. So, this project
+		  mainly focuses on exploiting the potential ability of hardware. And they experiments their algorithm 
+		  on running multiple applications at the same time to simulate the competition of processor resources.
+
+5. Optimized Distributed Work-Stealing
+
+Comments: I think this one is too specific because they mainly focus on eliminating failed steals in order to 
+		  decrease the overhead caused by communicating with a victim that has no work. This means they don't 
+		  want this situation to happen when a thief is trying to steal a task from a "worker"(actually this 
+		  processor can be regarded as a thief). And they perform their algorithm in a distributed system which 
+		  includes more than 10 thousand cores. Besides, how to monitor whether a steal is success or failed is
+		  also not trivial.
+
+6. Work Stealing and Persistence-based Load Balancers for Iterative Overdecomposed Applications
+
+Comments: This could be one of our candidates. But the algorithm will be a little tricky to implement, just have
+		  a look at their second algorithm which is called RETENTIVE WORK STEALING. But their testbed is on 
+		  distributed memory systems which may use message based programming. 
+
+7. A dynamic-sized nonblocking work stealing deque
+
+Comments: This article seems provide more information than the article of <Dynamic Circular Work-Stealing Deque>... 
+		  if someone choose this algorithm, please have a look at both articles.
+
+8. A Primer on Scheduling Fork-Join Parallelism with Work Stealing
+
+Comments: This can be one of our candidates which talks about the Fork-Join module.
+
+9. Cilk: An Efficient Multithreaded Runtime System
+
+Comments: This can be one of our candidates and this is a classical algorithm implemented by Blumofe et,al.
+
+
+Possible algorithms for us:
+1. Dynamic Circular Work-Stealing Deque
+2. Work Stealing and Persistence-based Load Balancers 
+   for Iterative Overdecomposed Applications --> RETENTIVE WORK STEALING 
+3. A Primer on Scheduling Fork-Join Parallelism with Work Stealing
+4. Cilk: An Efficient Multithreaded Runtime System
